@@ -54,7 +54,7 @@ namespace SssUser
             getSizeInfoButton.Enabled = false;
             try
             {
-                _serverInfoManager.StartGetSizeInfo();
+                _serverInfoManager.StartGetSizeInfo(monthComboBox.SelectedIndex+1);
             }
             finally
             {
@@ -87,7 +87,11 @@ namespace SssUser
             _serverInfoManager = new ServerInfoManager();
             _serverInfoManager.UpdateLog += AppendLogToListBox;
             serverInfoDataGridView.DataSource = _serverInfoManager.GetServerList();
+
+            var nowdt = DateTime.Now;
+            monthComboBox.SelectedIndex = nowdt.Month - 1;
         }
+  
         
     }
 }

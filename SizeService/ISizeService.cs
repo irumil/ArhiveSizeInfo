@@ -8,6 +8,8 @@ namespace SizeService
     {
         [OperationContract]
         string GetSizeInfo();
-        
+
+        [OperationContract]
+        string GetSizeInfoForMonth(int month);
     }
 }

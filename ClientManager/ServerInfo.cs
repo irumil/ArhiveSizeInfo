@@ -134,7 +134,7 @@ namespace ClientManager
         }
 
       
-        public string GetSizeInfoFromServer()
+        public string GetSizeInfoFromServer(int month)
         {
             var client = GetClient();
             string result = string.Empty;
@@ -143,7 +143,7 @@ namespace ClientManager
             {
                 ServerStatus = ServerStatus.CheckServerState;
 
-                result = client.GetSizeInfo();
+                result = client.GetSizeInfoForMonth(month);
 
                 ServerStatus = ServerStatus.SizeInfoRejected;
                 

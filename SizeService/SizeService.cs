@@ -9,5 +9,10 @@ namespace SizeService
         {
             return ArhivSizeInfoMethod.GetInfoThisMohtn();
         }
+
+        public string GetSizeInfoForMonth(int month)
+        {
+            return ArhivSizeInfoMethod.GetInfoForMohtn(month);
+        }
     }
 }

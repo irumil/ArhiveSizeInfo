@@ -20,6 +20,12 @@ namespace ClientManager.SizeServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISizeService/GetSizeInfo", ReplyAction="http://tempuri.org/ISizeService/GetSizeInfoResponse")]
         System.Threading.Tasks.Task<string> GetSizeInfoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISizeService/GetSizeInfoForMonth", ReplyAction="http://tempuri.org/ISizeService/GetSizeInfoForMonthResponse")]
+        string GetSizeInfoForMonth(int month);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISizeService/GetSizeInfoForMonth", ReplyAction="http://tempuri.org/ISizeService/GetSizeInfoForMonthResponse")]
+        System.Threading.Tasks.Task<string> GetSizeInfoForMonthAsync(int month);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace ClientManager.SizeServiceReference {
         
         public System.Threading.Tasks.Task<string> GetSizeInfoAsync() {
             return base.Channel.GetSizeInfoAsync();
+        }
+        
+        public string GetSizeInfoForMonth(int month) {
+            return base.Channel.GetSizeInfoForMonth(month);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetSizeInfoForMonthAsync(int month) {
+            return base.Channel.GetSizeInfoForMonthAsync(month);
         }
     }
 }

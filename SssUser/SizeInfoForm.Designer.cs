@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SizeInfoForm));
             this.serverInfoDataGridView = new System.Windows.Forms.DataGridView();
+            this.NeedCopy = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IpAdress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.logTextBox = new System.Windows.Forms.TextBox();
             this.copyButton = new System.Windows.Forms.Button();
             this.getSizeInfoButton = new System.Windows.Forms.Button();
@@ -38,10 +42,7 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.NeedCopy = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IpAdress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.serverInfoDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +65,35 @@
             this.serverInfoDataGridView.Size = new System.Drawing.Size(629, 182);
             this.serverInfoDataGridView.TabIndex = 34;
             // 
+            // NeedCopy
+            // 
+            this.NeedCopy.DataPropertyName = "NeedSize";
+            this.NeedCopy.HeaderText = "Инфо";
+            this.NeedCopy.Name = "NeedCopy";
+            this.NeedCopy.Width = 50;
+            // 
+            // IpAdress
+            // 
+            this.IpAdress.DataPropertyName = "IpAdress";
+            this.IpAdress.HeaderText = "Ip Адрес";
+            this.IpAdress.Name = "IpAdress";
+            this.IpAdress.Width = 80;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Описание";
+            this.Description.Name = "Description";
+            this.Description.Width = 120;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "StatusInfo";
+            this.status.HeaderText = "Статус";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 300;
+            // 
             // logTextBox
             // 
             this.logTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -80,7 +110,7 @@
             // copyButton
             // 
             this.copyButton.Image = global::SssUser.Properties.Resources.copy;
-            this.copyButton.Location = new System.Drawing.Point(232, 4);
+            this.copyButton.Location = new System.Drawing.Point(332, 4);
             this.copyButton.Name = "copyButton";
             this.copyButton.Size = new System.Drawing.Size(40, 40);
             this.copyButton.TabIndex = 41;
@@ -91,7 +121,7 @@
             // getSizeInfoButton
             // 
             this.getSizeInfoButton.Image = global::SssUser.Properties.Resources.clientSize;
-            this.getSizeInfoButton.Location = new System.Drawing.Point(186, 4);
+            this.getSizeInfoButton.Location = new System.Drawing.Point(286, 4);
             this.getSizeInfoButton.Name = "getSizeInfoButton";
             this.getSizeInfoButton.Size = new System.Drawing.Size(40, 40);
             this.getSizeInfoButton.TabIndex = 40;
@@ -132,40 +162,33 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // NeedCopy
+            // monthComboBox
             // 
-            this.NeedCopy.DataPropertyName = "NeedSize";
-            this.NeedCopy.HeaderText = "Инфо";
-            this.NeedCopy.Name = "NeedCopy";
-            this.NeedCopy.Width = 50;
-            // 
-            // IpAdress
-            // 
-            this.IpAdress.DataPropertyName = "IpAdress";
-            this.IpAdress.HeaderText = "Ip Адрес";
-            this.IpAdress.Name = "IpAdress";
-            this.IpAdress.Width = 80;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Описание";
-            this.Description.Name = "Description";
-            this.Description.Width = 120;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "StatusInfo";
-            this.status.HeaderText = "Статус";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 300;
+            this.monthComboBox.FormattingEnabled = true;
+            this.monthComboBox.Items.AddRange(new object[] {
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь"});
+            this.monthComboBox.Location = new System.Drawing.Point(186, 15);
+            this.monthComboBox.Name = "monthComboBox";
+            this.monthComboBox.Size = new System.Drawing.Size(93, 21);
+            this.monthComboBox.TabIndex = 42;
             // 
             // SizeInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 632);
+            this.Controls.Add(this.monthComboBox);
             this.Controls.Add(this.copyButton);
             this.Controls.Add(this.getSizeInfoButton);
             this.Controls.Add(this.logTextBox);
@@ -200,6 +223,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IpAdress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.ComboBox monthComboBox;
     }
 }
 

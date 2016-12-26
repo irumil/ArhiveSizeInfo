@@ -56,19 +56,16 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SizeServiceReference\SizeService.wsdl" />
-    <None Include="Service References\SizeServiceReference\SizeService.xsd">
+    <None Include="Service References\SizeServiceReference\SizeService1.wsdl" />
+    <None Include="Service References\SizeServiceReference\SizeService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SizeServiceReference\SizeService1.xsd">
+    <None Include="Service References\SizeServiceReference\SizeService21.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\SizeServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SizeServiceReference\SizeService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SizeServiceReference\configuration91.svcinfo" />
@@ -81,6 +78,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SizeServiceReference\SizeService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

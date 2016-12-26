@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
+using System.Net.NetworkInformation;
 
 namespace ArhivSizeInfoLib
 {
@@ -67,20 +68,16 @@ namespace ArhivSizeInfoLib
 
             return new SizeInfo(outInfo, inInfo);
         }
-   
-        public static string GetInfoThisMohtn(/*string arhivFolder = "C:\\Arxiv"*/)
+
+        public static string GetInfoFromFolder(string monthFolder)
         {
             var directorySizeInfo = new Dictionary<string, SizeInfo>();
-
-            var indt = DateTime.Now;
             var dayInMonth = 0;
+            var indt = DateTime.Now;
 
             //вычисляем год
             var yearFolder = indt.Year.ToString().Substring(2, 2);
-            //вычисляем месяц
-            var monthFolder = indt.Month.ToString().Length == 1
-                ? ("0" + indt.Month)
-                : (indt.Month.ToString());
+            
 
             // если папка архива не задана то ставим по умолчанию 
             var arhivFolder = ConfigurationManager.AppSettings["arhivFolder"] ?? "C:\\ARXIV";
@@ -88,10 +85,11 @@ namespace ArhivSizeInfoLib
             // строим путь к папке с месяцами
             string arhivMonthPath = arhivFolder + "\\" + yearFolder + "\\" + monthFolder;
 
+
             if (!Directory.Exists(arhivMonthPath))
             {
                 return "Нет данных за текущий месяц(нет папки с номером текущего месяца)" +
-                     Environment.NewLine+ "Папка с архивом "+ arhivMonthPath;
+                     Environment.NewLine + "Папка с архивом " + arhivMonthPath;
             }
 
             // сканируем папку с месяцами
@@ -164,6 +162,30 @@ namespace ArhivSizeInfoLib
                     monthFolder, yearFolder, dayInMonth,
                     RoundThs(monthIninfo), RoundThs(monthIninfo / dayInMonth),
                     RoundThs(monthOutInfo), RoundThs(monthOutInfo / dayInMonth));
+        
+
+        }
+
+        public static string GetInfoForMohtn(int month)
+        {
+            var monthFolder = month.ToString().Length == 1
+                ? ("0" + month)
+                : (month.ToString());
+
+            return GetInfoFromFolder(monthFolder);
+        }
+
+        public static string GetInfoThisMohtn()
+        {
+            var indt = DateTime.Now;
+
+            //вычисляем месяц
+            var monthFolder = indt.Month.ToString().Length == 1
+                ? ("0" + indt.Month)
+                : (indt.Month.ToString());
+
+            return GetInfoFromFolder(monthFolder);
+
         }
 
     }

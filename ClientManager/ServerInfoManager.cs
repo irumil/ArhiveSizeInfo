@@ -60,13 +60,13 @@ namespace ClientManager
             }
         }
 
-        public void StartGetSizeInfo()
+        public void StartGetSizeInfo(int month)
         {
             WriteLog("----------Получение информации от серверов!!!----------");
 
             foreach (var serverInfo in _listManger.Where(x => x.NeedSize))
             {
-                WriteLog( serverInfo.GetSizeInfoFromServer());
+                WriteLog(serverInfo.GetSizeInfoFromServer(month));
             }
         }
         

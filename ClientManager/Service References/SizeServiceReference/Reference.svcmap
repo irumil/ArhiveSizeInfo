@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8333/SizeService" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8004/SizeService" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SizeService.xsd" MetadataType="Schema" ID="85b707ac-b5de-49d0-9145-5d432a69f68f" SourceId="1" SourceUrl="http://localhost:8333/SizeService?xsd=xsd1" />
-    <MetadataFile FileName="SizeService.wsdl" MetadataType="Wsdl" ID="3c3cef05-c582-4040-8ad3-b63aafcc99f3" SourceId="1" SourceUrl="http://localhost:8333/SizeService?wsdl" />
-    <MetadataFile FileName="SizeService.disco" MetadataType="Disco" ID="12bb4c5e-92ad-476a-b278-b68c071334a2" SourceId="1" SourceUrl="http://localhost:8333/SizeService?disco" />
-    <MetadataFile FileName="SizeService1.xsd" MetadataType="Schema" ID="14f67a2d-c149-4b76-9ed3-3792d80aa8c6" SourceId="1" SourceUrl="http://localhost:8333/SizeService?xsd=xsd0" />
+    <MetadataFile FileName="SizeService2.xsd" MetadataType="Schema" ID="19eb3b01-86ce-43e8-8a02-8f9e21196cb6" SourceId="1" SourceUrl="http://localhost:8004/SizeService?xsd=xsd0" />
+    <MetadataFile FileName="SizeService1.disco" MetadataType="Disco" ID="36106174-196f-41df-9442-17cbe55976c4" SourceId="1" SourceUrl="http://localhost:8004/SizeService?disco" />
+    <MetadataFile FileName="SizeService1.wsdl" MetadataType="Wsdl" ID="05ff4039-def0-4663-978f-e0f7cbbf8359" SourceId="1" SourceUrl="http://localhost:8004/SizeService?wsdl" />
+    <MetadataFile FileName="SizeService21.xsd" MetadataType="Schema" ID="4ebc1d4c-7688-41f3-ae6f-860038a6832a" SourceId="1" SourceUrl="http://localhost:8004/SizeService?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
